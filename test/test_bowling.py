@@ -12,3 +12,7 @@ class TestBowlingGame(unittest.TestCase):
         game = BowlingGame()
         game.add_frame(frame)
         self.assertEqual(frame, game.get_frame_at(0))
+
+    def test_empty_game(self):
+        game = BowlingGame()
+        self.assertRaises(BowlingError, game.get_frame_at, 0)
